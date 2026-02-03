@@ -1,0 +1,68 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int choice;
+    double num1, num2, result;
+    
+    do {
+        cout << "1. Add" << endl;
+        cout << "2. Subtract" << endl;
+        cout << "3. Multiply" << endl;
+        cout << "4. Divide" << endl;
+        cout << "5. Exit" << endl;
+        cout << "Enter your choice (1-5): ";
+        cin >> choice;
+        
+        if(choice == 5) {
+            cout << "Thank you for using this calculator. Goodbye!" << endl;
+            break;
+        }
+        
+        if(choice >= 1 && choice <= 4) {
+            cout << "Enter first number: ";
+            cin >> num1;
+            cout << "Enter second number: ";
+            cin >> num2;
+        }
+        
+        switch(choice) {
+            case 1:
+                result = num1 + num2;
+                cout << num1 << " + " << num2 << " = " << result << endl;
+                break;
+                
+            case 2:
+                result = num1 - num2;
+                cout<< num1 << " - " << num2 << " = " << result << endl;
+                break;
+                
+            case 3:
+                result = num1 * num2;
+                cout << num1 << " * " << num2 << " = " << result << endl;
+                break;
+                
+            case 4:
+                if(num2 != 0) {
+                    result = num1 / num2;
+                    cout << num1 << " / " << num2 << " = " << result << endl;
+                } else {
+                    cout << "Error: Cannot divide by zero!" << endl;
+                }
+                break;
+                
+            default:
+                cout << "Invalid choice! Please enter a number between 1 and 5." << endl;
+        }
+        
+    } while(choice >= 5);
+    
+    return 0;
+}
+
+
+
+
+
+
+
